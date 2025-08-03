@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ein leichter, responsiver Blog mit perfekten Lighthouse-Scores">
+    <title>Mein Blog</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Inlining critical CSS for performance -->
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --background-color: #f8f9fa;
+            --text-color: #333;
+            --light-gray: #e9ecef;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+        
+        .header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1rem;
+            position: relative;
+        }
+
+        .site-title {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .nav-toggle {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                background: none;
+                border: none;
+                color: white;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+            
+            .nav-menu {
+                display: none;
+                width: 100%;
+            }
+            
+            .nav-menu.active {
+                display: block;
+            }
+            
+            .nav-menu ul {
+                flex-direction: column;
+            }
+            
+            .nav-menu li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="site-title">Mein Blog</h1>
+            <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+            <nav class="nav-menu" aria-label="Hauptnavigation">
+                <ul>
+                    <li><a href="index.html" aria-current="page">Startseite</a></li>
+                    <li><a href="categories.html">Kategorien</a></li>
+                    <li><a href="about.html">Über</a></li>
+                    <li><a href="contact.html">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="search-section">
+            <h2 class="visually-hidden">Blogsuche</h2>
+            <form class="search-form" role="search" aria-label="Blog durchsuchen">
+                <label for="search-input" class="visually-hidden">Suche nach Blogeinträgen:</label>
+                <input type="search" id="search-input" placeholder="Blogeinträge suchen..." aria-label="Suchbegriff eingeben">
+                <button type="submit" aria-label="Suchen">Suchen</button>
+            </form>
+        </section>
+
+        <div class="content-wrapper">
+            <section class="featured-posts">
+                <h2>Neueste Beiträge</h2>
+                <div class="post-grid">
+                    <!-- Post 1 -->
+                    <article class="post-card">
+                        <a href="posts/post1.html" class="post-link">
+                            <div class="post-image" aria-hidden="true">
+                                <img src="images/placeholder-1.svg" alt="" width="300" height="200" loading="lazy">
+                            </div>
+                            <div class="post-content">
+                                <h3>Willkommen zum ersten Blogeintrag</h3>
+                                <p class="post-meta">
+                                    <time datetime="2025-08-01">01. August 2025</time> • 
+                                    <span class="post-category">Allgemein</span>
+                                </p>
+                                <p class="post-excerpt">Dies ist eine Zusammenfassung des ersten Blogeintrags. Der Text gibt einen kurzen Überblick über den Inhalt des vollständigen Artikels.</p>
+                            </div>
+                        </a>
+                    </article>
+                    
+                    <!-- Post 2 -->
+                    <article class="post-card">
+                        <a href="posts/post2.html" class="post-link">
+                            <div class="post-image" aria-hidden="true">
+                                <img src="images/placeholder-2.svg" alt="" width="300" height="200" loading="lazy">
+                            </div>
+                            <div class="post-content">
+                                <h3>Ein interessanter zweiter Beitrag</h3>
+                                <p class="post-meta">
+                                    <time datetime="2025-07-28">28. Juli 2025</time> • 
+                                    <span class="post-category">Technologie</span>
+                                </p>
+                                <p class="post-excerpt">Eine kurze Beschreibung dieses Beitrags, die den Leser neugierig macht und zum Weiterlesen animiert.</p>
+                            </div>
+                        </a>
+                    </article>
+                    
+                    <!-- Post 3 -->
+                    <article class="post-card">
+                        <a href="posts/post3.html" class="post-link">
+                            <div class="post-image" aria-hidden="true">
+                                <img src="images/placeholder-3.svg" alt="" width="300" height="200" loading="lazy">
+                            </div>
+                            <div class="post-content">
+                                <h3>Der dritte Beitrag mit wichtigen Informationen</h3>
+                                <p class="post-meta">
+                                    <time datetime="2025-07-25">25. Juli 2025</time> • 
+                                    <span class="post-category">Lifestyle</span>
+                                </p>
+                                <p class="post-excerpt">Hier ist eine kurze Vorschau auf den dritten Blogeintrag mit spannenden Informationen.</p>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            </section>
+
+            <aside class="sidebar">
+                <div class="sidebar-widget categories-widget">
+                    <h3>Kategorien</h3>
+                    <ul>
+                        <li><a href="categories.html?category=allgemein">Allgemein <span class="count">5</span></a></li>
+                        <li><a href="categories.html?category=technologie">Technologie <span class="count">8</span></a></li>
+                        <li><a href="categories.html?category=lifestyle">Lifestyle <span class="count">4</span></a></li>
+                        <li><a href="categories.html?category=reisen">Reisen <span class="count">6</span></a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-widget archive-widget">
+                    <h3>Archiv</h3>
+                    <ul>
+                        <li><a href="archive.html?month=2025-08">August 2025 <span class="count">1</span></a></li>
+                        <li><a href="archive.html?month=2025-07">Juli 2025 <span class="count">7</span></a></li>
+                        <li><a href="archive.html?month=2025-06">Juni 2025 <span class="count">5</span></a></li>
+                        <li><a href="archive.html?month=2025-05">Mai 2025 <span class="count">10</span></a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Mein Blog. Alle Rechte vorbehalten.</p>
+            <nav class="footer-nav" aria-label="Fußzeilennavigation">
+                <ul>
+                    <li><a href="privacy.html">Datenschutz</a></li>
+                    <li><a href="impressum.html">Impressum</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+    
+    <script src="js/script.js" defer></script>
+    <!-- Inline critical JS for performance -->
+    <script>
+        // Menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (menuToggle && navMenu) {
+                menuToggle.addEventListener('click', function() {
+                    const expanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', !expanded);
+                    navMenu.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
